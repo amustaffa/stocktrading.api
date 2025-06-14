@@ -1,0 +1,702 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Api/StockTrading.Api.csproj": {}
+  },
+  "projects": {
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Api/StockTrading.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Api/StockTrading.Api.csproj",
+        "projectName": "StockTrading.Api",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Api/StockTrading.Api.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Api/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repositories/StockTrading.Repositories.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repositories/StockTrading.Repositories.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Services/StockTrading.Services.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Services/StockTrading.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/StockTrading.Configurations.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/StockTrading.Configurations.csproj",
+        "projectName": "StockTrading.Configurations",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/StockTrading.Configurations.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Data/StockTrading.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Data/StockTrading.Data.csproj",
+        "projectName": "StockTrading.Data",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Data/StockTrading.Data.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Data/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj",
+        "projectName": "StockTrading.Models.Domain",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj",
+        "projectName": "StockTrading.Models.DTO",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repositories/StockTrading.Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repositories/StockTrading.Repositories.csproj",
+        "projectName": "StockTrading.Repositories",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repositories/StockTrading.Repositories.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repositories/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Data/StockTrading.Data.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Data/StockTrading.Data.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj",
+        "projectName": "StockTrading.Repository.Interfaces",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.Domain/StockTrading.Models.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj",
+        "projectName": "StockTrading.Service.Interfaces",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Services/StockTrading.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Services/StockTrading.Services.csproj",
+        "projectName": "StockTrading.Services",
+        "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Services/StockTrading.Services.csproj",
+        "packagesPath": "/Users/arifmustaffa/.nuget/packages/",
+        "outputPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Services/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/arifmustaffa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/StockTrading.Configurations.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/StockTrading.Configurations.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/StockTrading.Models.DTO.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj"
+              },
+              "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj": {
+                "projectPath": "/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.IdentityModel": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

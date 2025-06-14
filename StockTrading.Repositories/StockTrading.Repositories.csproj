@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../StockTrading.Data/StockTrading.Data.csproj" />
+    <ProjectReference Include="../StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

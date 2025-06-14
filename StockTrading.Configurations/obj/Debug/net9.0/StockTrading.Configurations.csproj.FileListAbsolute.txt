@@ -1,0 +1,11 @@
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/bin/Debug/net9.0/StockTrading.Configurations.deps.json
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/bin/Debug/net9.0/StockTrading.Configurations.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/bin/Debug/net9.0/StockTrading.Configurations.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/StockTrading.Configurations.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/StockTrading.Configurations.AssemblyInfoInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/StockTrading.Configurations.AssemblyInfo.cs
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/StockTrading.Configurations.csproj.CoreCompileInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/StockTrading.Configurations.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/refint/StockTrading.Configurations.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/StockTrading.Configurations.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Configurations/obj/Debug/net9.0/ref/StockTrading.Configurations.dll

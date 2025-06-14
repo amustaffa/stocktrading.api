@@ -1,0 +1,15 @@
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/bin/Debug/net9.0/StockTrading.Models.DTO.deps.json
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/bin/Debug/net9.0/StockTrading.Models.DTO.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/bin/Debug/net9.0/StockTrading.Models.DTO.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/bin/Debug/net9.0/StockTrading.Models.Domain.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/bin/Debug/net9.0/StockTrading.Models.Domain.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.csproj.AssemblyReference.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.AssemblyInfoInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.AssemblyInfo.cs
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.csproj.CoreCompileInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTra.B4AE647D.Up2Date
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/refint/StockTrading.Models.DTO.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/StockTrading.Models.DTO.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Models.DTO/obj/Debug/net9.0/ref/StockTrading.Models.DTO.dll

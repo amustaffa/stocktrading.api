@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../StockTrading.Configurations/StockTrading.Configurations.csproj" />
+    <ProjectReference Include="../StockTrading.Models.DTO/StockTrading.Models.DTO.csproj" />
+    <ProjectReference Include="../StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj" />
+    <ProjectReference Include="../StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel" Version="7.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.12.0" />
+  </ItemGroup>
+
+</Project>

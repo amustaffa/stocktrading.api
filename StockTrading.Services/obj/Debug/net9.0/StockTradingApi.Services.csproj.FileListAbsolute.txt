@@ -1,0 +1,11 @@
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/bin/Debug/net9.0/StockTradingApi.Services.deps.json
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/bin/Debug/net9.0/StockTradingApi.Services.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/bin/Debug/net9.0/StockTradingApi.Services.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/StockTradingApi.Services.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/StockTradingApi.Services.AssemblyInfoInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/StockTradingApi.Services.AssemblyInfo.cs
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/StockTradingApi.Services.csproj.CoreCompileInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/StockTradingApi.Services.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/refint/StockTradingApi.Services.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/StockTradingApi.Services.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTradingApi/StockTradingApi.Services/obj/Debug/net9.0/ref/StockTradingApi.Services.dll

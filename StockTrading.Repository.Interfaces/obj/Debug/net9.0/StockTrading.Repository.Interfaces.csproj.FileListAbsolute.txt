@@ -1,0 +1,15 @@
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/bin/Debug/net9.0/StockTrading.Repository.Interfaces.deps.json
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/bin/Debug/net9.0/StockTrading.Repository.Interfaces.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/bin/Debug/net9.0/StockTrading.Repository.Interfaces.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/bin/Debug/net9.0/StockTrading.Models.Domain.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/bin/Debug/net9.0/StockTrading.Models.Domain.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.csproj.AssemblyReference.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.AssemblyInfoInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.AssemblyInfo.cs
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.csproj.CoreCompileInputs.cache
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTra.5D40A2D1.Up2Date
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/refint/StockTrading.Repository.Interfaces.dll
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/StockTrading.Repository.Interfaces.pdb
+/Users/arifmustaffa/Library/Mobile Documents/com~apple~CloudDocs/Documents/source/StockTrading/StockTrading.Repository.Interfaces/obj/Debug/net9.0/ref/StockTrading.Repository.Interfaces.dll
