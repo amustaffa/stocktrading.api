@@ -188,6 +188,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapHub<StockHub>("/signalr"); // Map your SignalR Hub to a URL
+app.MapHub<StockHub>("/SubscribeToPortfolio"); // Map your SignalR Hub to a URL
 
 // --- Apply Migrations and Seed Data on Startup ---
 // This is suitable for development environments. For production, consider

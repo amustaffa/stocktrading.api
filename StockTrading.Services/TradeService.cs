@@ -51,13 +51,15 @@ public class TradeService : ITradeService
             throw new ApplicationException($"Invalid quantity {trade.Quantity} for trade type {trade.Type}.");
         }
 
-        var hasEnoughQuantityToSell = await _portfolioService.ValidateTradeQuantityAsync(userId, trade);
-        if (trade.Type == TradeType.Sell && !hasEnoughQuantityToSell)
+        if (trade.Type == TradeType.Sell)
         {
-            _logger.LogWarning("Trade failed: Not enough stock quantity to sell for User {UserId}.", userId);
-            throw new ApplicationException("Not enough stock quantity to sell.");
+            var hasEnoughQuantityToSell = await _portfolioService.ValidateTradeQuantityAsync(userId, trade);
+            if (!hasEnoughQuantityToSell)
+            {
+                _logger.LogWarning("Trade failed: Not enough stock quantity to sell for User {UserId}.", userId);
+                throw new ApplicationException("Not enough stock quantity to sell.");
+            }
         }
-
         _logger.LogInformation("Placing trade: {TradeType} {Quantity} of {StockSymbol} for User {UserId}.",
             trade.Type, trade.Quantity, stock.Symbol, userId);
         // May call a third party service here to execute the trade

@@ -14,12 +14,14 @@ namespace StockTradingApi.Controllers
     public class TradesController : ControllerBase
     {
         private readonly ITradeService _tradeService;
+        private readonly IPortfolioService _portfolioService;
         private readonly ILogger<TradesController> _logger;
         private readonly IHubContext<StockHub> _hubContext; // Inject SignalR Hub Context
 
-        public TradesController(ITradeService tradeService, ILogger<TradesController> logger, IHubContext<StockHub> hubContext)
+        public TradesController(ITradeService tradeService, IPortfolioService portfolioService, ILogger<TradesController> logger, IHubContext<StockHub> hubContext)
         {
             _tradeService = tradeService;
+            _portfolioService = portfolioService;
             _logger = logger;
             _hubContext = hubContext;
         }
@@ -39,12 +41,11 @@ namespace StockTradingApi.Controllers
 
             try
             {
-                var trade = await _tradeService.PlaceTradeAsync(userId, order);
-
                 // Notify all connected clients about the new trade via SignalR
                 // In a real application, you might only send to the specific user or a group
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"New trade: {trade.Type} {trade.Quantity} of {trade.Symbol} by user {userId}");
-
+                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"New trade: {order.Type} {order.Quantity} of {order.Symbol} by user {userId}");                
+                var trade = await _tradeService.PlaceTradeAsync(userId, order);
+                await _hubContext.Clients.All.SendAsync("PortfolioUpdate", await _portfolioService.GetUserPortfolioAsync(userId));
                 return CreatedAtAction(nameof(GetUserTrades), new { userId = userId }, trade);
             }
             catch (ApplicationException ex)
@@ -59,7 +60,7 @@ namespace StockTradingApi.Controllers
             }
         }
 
-        [HttpGet("my-trades")]
+        [HttpGet]
         public async Task<IActionResult> GetUserTrades()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

@@ -21,6 +21,15 @@ public class StockHub : Hub
         await Clients.All.SendAsync("ReceiveMessage", $"Server received: {message} at {DateTime.UtcNow}");
     }
 
+        // This method can be invoked by a client (e.g., your Angular app)
+    public async Task SubscribeToPortfolio()
+    {
+        _logger.LogInformation("SignalR: Received message from client {ConnectionId}", Context.ConnectionId);
+        // Send a message back to all connected clients
+        await Clients.All.SendAsync("SubscribeToPortfolio", $"Subscribed to portfolio updates at {DateTime.UtcNow}");
+    }
+
+
     // Override OnConnectedAsync and OnDisconnectedAsync for connection lifecycle logging
     public override Task OnConnectedAsync()
     {

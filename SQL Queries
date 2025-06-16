@@ -27,3 +27,5 @@ SELECT TOP (1000) [Id]
 Update [StockTradingDB].[dbo].[PortfolioItems]
 SET [Quantity] = 500
 WHERE [Id] = 18;
+
+select * from [StockTradingDB].[dbo].[Trades] 

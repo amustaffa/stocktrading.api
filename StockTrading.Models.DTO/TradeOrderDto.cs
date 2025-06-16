@@ -6,7 +6,7 @@ namespace StockTrading.Models.DTO
     public class TradeOrderDto
     {        
         [Required]
-        public string Symbol { get; set; }
+        public required string Symbol { get; set; }
         [Required]
         public TradeType Type { get; set; }
         [Required]
