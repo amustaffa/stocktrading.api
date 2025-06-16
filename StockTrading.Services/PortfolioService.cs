@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using StockTrading.Repository.Interfaces;
 using StockTrading.Models.DTO;
 using StockTrading.Service.Interfaces;
+using System.Runtime.CompilerServices;
 
 namespace StockTrading.Services;
 
@@ -148,5 +149,27 @@ public class PortfolioService : IPortfolioService
         _portfolioRepository.Update(portfolio);
         await _portfolioRepository.SaveChangesAsync();
         _logger.LogInformation("Portfolio for user {UserId} updated successfully.", userId);
+    }
+
+    public async Task<bool> ValidateTradeQuantityAsync(string userId, Trade trade)
+    {
+        _logger.LogInformation("Validating trade quantity for user {UserId}, {Symbol}", userId, trade.Stock?.Symbol);
+
+        var portfolio = await _portfolioRepository.GetUserPortfolioWithItemsAsync(userId);
+        if (portfolio == null)
+        {
+            _logger.LogWarning("Validation failed: No portfolio found for user {UserId}.", userId);
+            return false;
+        }
+
+        var item = portfolio.Items.FirstOrDefault(pi => pi.StockId == trade.StockId);
+        if (trade.Type == TradeType.Sell && (item == null || item.Quantity < trade.Quantity))
+        {
+            _logger.LogWarning("Validation failed: Insufficient stock quantity for user {UserId}. Requested: {Requested}, Available: {Available}", userId, trade.Quantity, item?.Quantity ?? 0);
+            return false;
+        }
+
+        _logger.LogInformation("Trade quantity validation successful for user {UserId}.", userId);
+        return true;
     }
 }

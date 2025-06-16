@@ -1,12 +1,4 @@
-//using System.ComponentModel.DataAnnotations;
-
 namespace StockTrading.Models.Domain;
-public enum TradeType
-{
-    Buy,
-    Sell
-}
-
 public class Trade
 {
     public int Id { get; set; }
@@ -22,7 +14,6 @@ public class Trade
     public Stock Stock { get; set; } = null!; 
     public TradeType Type { get; set; }
     public int Quantity { get; set; }
-
     /// <summary>
     /// Price at which the stock was traded
     /// </summary>

@@ -25,7 +25,7 @@ namespace StockTradingApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PlaceTrade([FromBody] CreateTradeDto createTradeDto)
+        public async Task<IActionResult> PlaceTrade([FromBody] TradeOrderDto order)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Get UserId from JWT claims
             if (string.IsNullOrEmpty(userId))
@@ -34,16 +34,16 @@ namespace StockTradingApi.Controllers
                 return Unauthorized(new { message = "User not authenticated." });
             }
 
-            _logger.LogInformation("API: PlaceTrade request received for User {UserId}: StockId={StockId}, Type={TradeType}, Quantity={Quantity}",
-                userId, createTradeDto.StockId, createTradeDto.Type, createTradeDto.Quantity);
+            _logger.LogInformation("API: PlaceTrade request received for User {UserId}: Symbol={Symbol}, Type={TradeType}, Quantity={Quantity}",
+                userId, order.Symbol, order.Type, order.Quantity);
 
             try
             {
-                var trade = await _tradeService.PlaceTradeAsync(userId, createTradeDto);
+                var trade = await _tradeService.PlaceTradeAsync(userId, order);
 
                 // Notify all connected clients about the new trade via SignalR
                 // In a real application, you might only send to the specific user or a group
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"New trade: {trade.Type} {trade.Quantity} of {trade.StockSymbol} by user {userId}");
+                await _hubContext.Clients.All.SendAsync("ReceiveMessage", $"New trade: {trade.Type} {trade.Quantity} of {trade.Symbol} by user {userId}");
 
                 return CreatedAtAction(nameof(GetUserTrades), new { userId = userId }, trade);
             }

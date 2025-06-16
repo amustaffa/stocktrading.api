@@ -21,28 +21,47 @@ public class TradeService : ITradeService
         _portfolioService = portfolioService;
     }
 
-    public async Task<TradeDto> PlaceTradeAsync(string userId, CreateTradeDto createTradeDto)
+    public async Task<TradeDto> PlaceTradeAsync(string userId, TradeOrderDto order)
     {
         _logger.LogInformation("Attempting to place trade for User {UserId}: StockId={StockId}, Type={TradeType}, Quantity={Quantity}",
-            userId, createTradeDto.StockId, createTradeDto.Type, createTradeDto.Quantity);
+            userId, order.Symbol, order.Type, order.Quantity);
 
-        var stock = await _stockRepository.GetByIdAsync(createTradeDto.StockId);
+        var stock = await _stockRepository.GetBySymbolAsync(order.Symbol);
         if (stock == null)
         {
-            _logger.LogWarning("Trade failed: Stock with ID {StockId} not found.", createTradeDto.StockId);
-            throw new ApplicationException($"Stock with ID {createTradeDto.StockId} not found.");
+            _logger.LogWarning("Trade failed: Stock with ID {symbol} not found.", order.Symbol);
+            throw new ApplicationException($"Stock with symbol {order.Symbol} not found.");
         }
 
         var trade = new Trade
         {
             UserId = userId,
-            StockId = createTradeDto.StockId,
-            Type = createTradeDto.Type,
-            Quantity = createTradeDto.Quantity,
+            StockId = stock.Id,
+            Type = order.Type,
+            Quantity = order.Quantity,
             Price = stock.CurrentPrice, // Record the price at the time of trade
             TradeDate = DateTime.UtcNow,
             Stock = stock // Attach the stock object for relationship
         };
+
+        // Validate trade quantity
+        if (trade.Quantity <= 0)
+        {
+            _logger.LogWarning("Trade failed: Invalid quantity {Quantity} for trade type {TradeType}.", trade.Quantity, trade.Type);
+            throw new ApplicationException($"Invalid quantity {trade.Quantity} for trade type {trade.Type}.");
+        }
+
+        var hasEnoughQuantityToSell = await _portfolioService.ValidateTradeQuantityAsync(userId, trade);
+        if (trade.Type == TradeType.Sell && !hasEnoughQuantityToSell)
+        {
+            _logger.LogWarning("Trade failed: Not enough stock quantity to sell for User {UserId}.", userId);
+            throw new ApplicationException("Not enough stock quantity to sell.");
+        }
+
+        _logger.LogInformation("Placing trade: {TradeType} {Quantity} of {StockSymbol} for User {UserId}.",
+            trade.Type, trade.Quantity, stock.Symbol, userId);
+        // May call a third party service here to execute the trade
+        // For simplicity, we will just save the trade to the repository
 
         _tradeRepository.Add(trade);
         await _tradeRepository.SaveChangesAsync();
@@ -57,7 +76,7 @@ public class TradeService : ITradeService
             Id = trade.Id,
             UserId = trade.UserId,
             StockId = trade.StockId,
-            StockSymbol = stock.Symbol,
+            Symbol = stock.Symbol,
             Type = trade.Type,
             Quantity = trade.Quantity,
             Price = trade.Price,
@@ -76,7 +95,7 @@ public class TradeService : ITradeService
                 Id = t.Id,
                 UserId = t.UserId,
                 StockId = t.StockId,
-                StockSymbol = t.Stock?.Symbol ?? "N/A",
+                Symbol = t.Stock?.Symbol ?? "N/A",
                 Type = t.Type,
                 Quantity = t.Quantity,
                 Price = t.Price,

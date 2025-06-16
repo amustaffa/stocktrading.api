@@ -4,6 +4,6 @@ namespace StockTrading.Service.Interfaces;
 
 public interface ITradeService
 {
-    Task<TradeDto> PlaceTradeAsync(string userId, CreateTradeDto createTradeDto);
+    Task<TradeDto> PlaceTradeAsync(string userId, TradeOrderDto order);
     Task<IEnumerable<TradeDto>> GetUserTradesAsync(string userId);
 }
