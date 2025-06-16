@@ -60,12 +60,11 @@ public class PortfolioService : IPortfolioService
             {
                 Id = item.Id,
                 StockId = item.StockId,
-                StockSymbol = item.Stock?.Symbol ?? "N/A",
+                Symbol = item.Stock?.Symbol ?? "N/A",
+                CurrentPrice = item.Stock?.CurrentPrice ?? 0,
                 CompanyName = item.Stock?.CompanyName ?? "Unknown Company",
                 Quantity = item.Quantity,
                 AverageCost = item.AverageCost,
-                CurrentMarketValue = item.Quantity * (item.Stock?.CurrentPrice ?? 0m),
-                ProfitLoss = (item.Quantity * (item.Stock?.CurrentPrice ?? 0m)) - (item.Quantity * item.AverageCost)
             });
         }
 

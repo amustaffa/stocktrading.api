@@ -6,11 +6,25 @@ namespace StockTrading.Models.DTO
     {
         public int Id { get; set; }
         public int StockId { get; set; }
-        public string StockSymbol { get; set; } = string.Empty;
+        public string Symbol { get; set; } = string.Empty;
         public string CompanyName { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public decimal AverageCost { get; set; }
-        public decimal CurrentMarketValue { get; set; } // Quantity * CurrentPrice
-        public decimal ProfitLoss { get; set; } // CurrentMarketValue - (Quantity * AverageCost)
+
+        // CurrentPrice is the latest price of the stock, which can be updated from an external source.
+        public decimal CurrentPrice { get; set; }
+        public decimal TotalValue {
+            get
+            {
+                return Quantity * CurrentPrice;
+            }
+        }
+        public decimal GainLoss
+        {
+            get
+            {
+                return (Quantity* CurrentPrice) - (Quantity* AverageCost);
+            }
+        }
     }
 }
