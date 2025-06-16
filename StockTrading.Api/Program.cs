@@ -13,7 +13,10 @@ using StockTradingApi.Middlewares; // For custom exception handling
 using StockTrading.Repositories;
 using StockTrading.Repository.Interfaces; // Added for repository pattern
 using StockTrading.Service.Interfaces; // Added for service interfaces
-using StockTrading.Services; // Added for service implementations
+using StockTrading.Services;
+using Microsoft.AspNetCore.SignalR;
+using StockTradingApi.Filters; // Added for service implementations
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,14 +66,15 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidAudience = jwtSettings.Audience,
         ValidateLifetime = true,
-        ClockSkew = TimeSpan.Zero // Token expires exactly at expiry time
+        ClockSkew = TimeSpan.FromMinutes(5) // Add 5 minutes tolerance
     };
     // For SignalR authentication:
     options.Events = new JwtBearerEvents
     {
         OnMessageReceived = context =>
         {
-            var accessToken = context.Request.Query["access_token"];
+            // Get the token from the Authorization header
+            var accessToken = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             // If the request is for our Hub...
             var path = context.HttpContext.Request.Path;
@@ -108,6 +112,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddScoped<ITradeService, TradeService>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
+builder.Services.AddScoped<ITokenValidationService, TokenValidationService>(); // <-- Added this line
 
 // --- Register Repositories for Dependency Injection ---
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); // Generic repository
@@ -115,7 +120,6 @@ builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<ITradeRepository, TradeRepository>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioItemRepository, PortfolioItemRepository>();
-
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -158,6 +162,7 @@ builder.Services.AddSwaggerGen(c =>
 
 // --- Add SignalR ---
 builder.Services.AddSignalR();
+builder.Services.AddSingleton<IHubFilter, DbContextHubFilter>();
 
 
 var app = builder.Build();
@@ -187,26 +192,26 @@ app.MapHub<StockHub>("/signalr"); // Map your SignalR Hub to a URL
 // --- Apply Migrations and Seed Data on Startup ---
 // This is suitable for development environments. For production, consider
 // running migrations as part of your CI/CD pipeline.
-using (var scope = app.Services.CreateScope())
+try
 {
-    var services = scope.ServiceProvider;
-    try
+    using (var scope = app.Services.CreateScope())
     {
-        var context = services.GetRequiredService<ApplicationDbContext>();
+        var services = scope.ServiceProvider;
+        using var context = services.GetRequiredService<ApplicationDbContext>();
         var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-        // // Apply migrations
-        // context.Database.Migrate();
+        // Apply migrations
+        //context.Database.Migrate();
 
-        // Seed roles and admin user (example)
-        await new SeedData().Initialize(services, userManager, roleManager);
+        // Seed roles and admin user
+        //await new SeedData().Initialize(services, userManager, roleManager);
     }
-    catch (Exception ex)
-    {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while seeding the database or applying migrations.");
-    }
+}
+catch (Exception ex)
+{
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "An error occurred while seeding the database or applying migrations.");
 }
 
 

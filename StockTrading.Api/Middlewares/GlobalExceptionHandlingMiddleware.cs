@@ -1,6 +1,7 @@
 using System.Net;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using StockTrading.Shared;
 
 namespace StockTradingApi.Middlewares;
 
@@ -28,20 +29,35 @@ public class GlobalExceptionHandlingMiddleware
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
-        context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-        var response = new
+        if (exception is Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException tokenException)
         {
-            message = "An unexpected error occurred. Please try again later.",
-            // In production, avoid exposing detailed error information
-            // For development, you might include exception.Message
-            // detail = exception.Message
-        };
+            _logger.LogWarning(
+                "Token expired. Expiration: {Expiration}, Current UTC: {CurrentTime}, Difference: {TimeDiff} minutes",
+                tokenException.Expires,
+                DateTime.UtcNow,
+                ((DateTime)tokenException.Expires! - DateTime.UtcNow).TotalMinutes);
+        }
 
-        return context.Response.WriteAsync(JsonSerializer.Serialize(response));
+        context.Response.ContentType = "application/json";
+        
+        var response = exception switch
+        {
+            DatabaseConnectionException dbEx => new
+            {
+                message = "Database connection error occurred",
+                statusCode = StatusCodes.Status503ServiceUnavailable
+            },
+            _ => new
+            {
+                message = "An unexpected error occurred. Please try again later.",
+                statusCode = StatusCodes.Status500InternalServerError
+            }
+        };
+        
+        context.Response.StatusCode = response.statusCode;
+        await context.Response.WriteAsync(JsonSerializer.Serialize(response));
     }
 }
 

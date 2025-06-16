@@ -19,7 +19,7 @@ namespace StockTradingApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet("my-portfolio")]
+        [HttpGet]
         public async Task<IActionResult> GetUserPortfolio()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Get UserId from JWT claims

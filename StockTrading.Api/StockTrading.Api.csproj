@@ -27,6 +27,7 @@
     <ProjectReference Include="../StockTrading.Repository.Interfaces/StockTrading.Repository.Interfaces.csproj" />
     <ProjectReference Include="../StockTrading.Service.Interfaces/StockTrading.Service.Interfaces.csproj" />
     <ProjectReference Include="../StockTrading.Services/StockTrading.Services.csproj" />
+    <ProjectReference Include="../StockTrading.Shared/StockTrading.Shared.csproj" />
   </ItemGroup>
 
 </Project>

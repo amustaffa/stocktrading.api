@@ -1,0 +1,25 @@
+SELECT TOP (1000) [Id]
+      ,[PortfolioId]
+      ,[StockId]
+      ,[Quantity]
+      ,[AverageCost]
+  FROM [StockTradingDB].[dbo].[PortfolioItems]
+
+  SELECT TOP (1000) U.[Id]
+      ,P.id 
+      ,U.Email
+      ,[Name]
+      ,[CreatedDate]
+      ,[LastUpdated]
+  FROM [StockTradingDB].[dbo].[Portfolios] P
+  JOIN [StockTradingDB].[dbo].[AspNetUsers] U ON P.[UserId] = U.[Id]
+  
+  insert into PortfolioItems
+  ([PortfolioId], [StockId], [Quantity], [AverageCost]) VALUES
+  (1,  1, 150.00, 200),
+  (1,  2, 2800.00, 150);
+--   (2,  1, 300.00, 400),
+--   (2,  2, 3500.00, 250); 
+   
+--   SET IDENTITY_INSERT PortfolioItems ON
+--   GO
