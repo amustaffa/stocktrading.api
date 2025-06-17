@@ -5,6 +5,4 @@ namespace StockTrading.Service.Interfaces;
 public interface IPortfolioService
 {
     Task<PortfolioDto?> GetUserPortfolioAsync(string userId);
-    Task UpdatePortfolioAsync(string userId, Trade trade);
-    Task<bool> ValidateTradeQuantityAsync(string userId, Trade trade);
 }

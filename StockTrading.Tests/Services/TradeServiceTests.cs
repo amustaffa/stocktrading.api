@@ -12,24 +12,28 @@ namespace StockTrading.Tests.Services
 {
     public class TradeServiceTests
     {
+        private readonly Mock<IUnitOfWork> _mockUnitOfWork;
         private readonly Mock<ITradeRepository> _mockTradeRepository;
         private readonly Mock<IStockRepository> _mockStockRepository;
-        private readonly Mock<IPortfolioService> _mockPortfolioService;
+        private readonly Mock<ITradeService> _mockTradeService;
         private readonly Mock<ILogger<TradeService>> _mockLogger;
         private readonly TradeService _tradeService;
 
         public TradeServiceTests()
         {
+            _mockUnitOfWork = new Mock<IUnitOfWork>();
             _mockTradeRepository = new Mock<ITradeRepository>();
             _mockStockRepository = new Mock<IStockRepository>();
-            _mockPortfolioService = new Mock<IPortfolioService>();
+            _mockTradeService = new Mock<ITradeService>();
             _mockLogger = new Mock<ILogger<TradeService>>();
 
+            // Setup the UnitOfWork to return our mocked repositories
+            _mockUnitOfWork.Setup(uow => uow.Trades).Returns(_mockTradeRepository.Object);
+            _mockUnitOfWork.Setup(uow => uow.Stocks).Returns(_mockStockRepository.Object);
+
             _tradeService = new TradeService(
-                _mockTradeRepository.Object,
-                _mockStockRepository.Object,
-                _mockLogger.Object,
-                _mockPortfolioService.Object
+                _mockUnitOfWork.Object,
+                _mockLogger.Object    // Only pass UnitOfWork and Logger
             );
         }
 
@@ -83,8 +87,8 @@ namespace StockTrading.Tests.Services
             };
 
             _mockStockRepository
-                .Setup(x => x.GetBySymbolAsync("INVALID"))
-                .ReturnsAsync((Stock)null);
+                .Setup(x => x.GetBySymbolAsync("THIS IS A INVALID SYMBOL"))
+                .ReturnsAsync((Stock?)null);
 
             // Act & Assert
             await Assert.ThrowsAsync<ApplicationException>(
@@ -115,9 +119,9 @@ namespace StockTrading.Tests.Services
                 .Setup(x => x.GetBySymbolAsync("AAPL"))
                 .ReturnsAsync(stock);
 
-            _mockPortfolioService
-                .Setup(x => x.ValidateTradeQuantityAsync(userId, It.IsAny<Trade>()))
-                .ReturnsAsync(false);
+            // _mockTradeService
+            //     .Setup(x => x.ValidateTradeQuantityAsync(userId, It.IsAny<Trade>()))
+            //     .ReturnsAsync(false);
 
             // Act & Assert
             await Assert.ThrowsAsync<ApplicationException>(

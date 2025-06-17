@@ -12,11 +12,10 @@ namespace StockTrading.Repositories
         }
 
         public async Task<IEnumerable<Trade>> GetUserTradesAsync(string userId)
-        {
-            // Stock is now in the same DbContext, so Include is straightforward.
+        {            
             return await _dbSet
                 .Where(t => t.UserId == userId)
-                .Include(t => t.Stock) // Include stock details
+                .Include(t => t.Stock)
                 .OrderByDescending(t => t.TradeDate)
                 .ToListAsync();
         }

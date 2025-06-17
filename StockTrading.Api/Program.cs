@@ -119,6 +119,7 @@ try
 
     // --- Register Repositories for Dependency Injection ---
     builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); // Generic repository
+    builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     builder.Services.AddScoped<IStockRepository, StockRepository>();
     builder.Services.AddScoped<ITradeRepository, TradeRepository>();
     builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
