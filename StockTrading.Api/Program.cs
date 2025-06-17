@@ -15,7 +15,8 @@ using StockTrading.Repository.Interfaces; // Added for repository pattern
 using StockTrading.Service.Interfaces; // Added for service interfaces
 using StockTrading.Services;
 using Microsoft.AspNetCore.SignalR;
-using StockTradingApi.Filters; // Added for service implementations
+using StockTradingApi.Filters;
+using Microsoft.AspNetCore.Mvc; // Added for service implementations
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -132,8 +133,9 @@ try
     // --- Swagger/OpenAPI Configuration (for API documentation and testing) ---
     builder.Services.AddSwaggerGen(c =>
     {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "StockTradingApi", Version = "v1" });
-
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "Stock Trading Api", Version = "v1" });
+        c.SwaggerDoc("v2", new OpenApiInfo { Title = "Stock Trading Api", Version = "v2" });
+        
         // Configure Swagger to use JWT Bearer authentication
         c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
         {
@@ -169,6 +171,15 @@ try
     builder.Services.AddSingleton<IHubFilter, DbContextHubFilter>();
     builder.Services.AddSingleton(MarketDataCache.Instance);
 
+    // API Versioning Configuration - This allows you to version your API endpoints.
+    builder.Services.AddApiVersioning(options =>
+    {
+        options.DefaultApiVersion = new ApiVersion(1, 0);
+        options.AssumeDefaultVersionWhenUnspecified = true;
+        options.ReportApiVersions = true;
+    });
+
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -180,7 +191,11 @@ try
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
-        app.UseSwaggerUI();
+        app.UseSwaggerUI(options =>
+        {
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Stock Trading API V1");
+            options.SwaggerEndpoint("/swagger/v2/swagger.json", "Stock Trading API V2");
+        });
     }
 
     app.UseHttpsRedirection();

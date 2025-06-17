@@ -9,7 +9,8 @@ using StockTrading.Models.DTO;
 namespace StockTradingApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [Authorize] // All endpoints in this controller require authentication
     public class TradesController : ControllerBase
     {
