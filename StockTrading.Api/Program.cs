@@ -167,7 +167,7 @@ try
     // --- Add SignalR ---
     builder.Services.AddSignalR();
     builder.Services.AddSingleton<IHubFilter, DbContextHubFilter>();
-
+    builder.Services.AddSingleton(MarketDataCache.Instance);
 
     var app = builder.Build();
 
