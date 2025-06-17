@@ -29,6 +29,11 @@ namespace StockTrading.Repositories
             return await _context.Database.BeginTransactionAsync();
         }
 
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();

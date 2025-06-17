@@ -63,4 +63,8 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         return await _context.SaveChangesAsync();
     }
+    public void Dispose()
+    {
+        _context.Dispose();
+    }
 }

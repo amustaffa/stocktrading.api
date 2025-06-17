@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 namespace StockTrading.Repository.Interfaces
 {
     // Generic interface for common data access operations
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         Task<TEntity?> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();

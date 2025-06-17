@@ -24,51 +24,54 @@ public class PortfolioService : IPortfolioService
 
     public async Task<PortfolioDto?> GetUserPortfolioAsync(string userId)
     {
+        var portfolioDto = new PortfolioDto();
         _logger.LogInformation("Fetching portfolio for user: {UserId}", userId);
 
-        var portfolio = await _portfolioRepository.GetUserPortfolioWithItemsAsync(userId);
-
-        if (portfolio == null)
+        try
         {
-            // Create a default portfolio if one doesn't exist
-            _logger.LogInformation("No portfolio found for user {UserId}. Creating a new default portfolio.", userId);
-            portfolio = new Portfolio
+            var portfolio = await _portfolioRepository.GetUserPortfolioWithItemsAsync(userId);
+            if (portfolio == null)
             {
-                UserId = userId,
-                Name = "My Main Portfolio",
-                CreatedDate = DateTime.UtcNow,
-                LastUpdated = DateTime.UtcNow
-            };
-            _portfolioRepository.Add(portfolio);
-            await _portfolioRepository.SaveChangesAsync();
-            // After saving, reload to get the newly created portfolio with its ID and its items
-            portfolio = (await _portfolioRepository.GetUserPortfolioWithItemsAsync(userId))!;
-        }
+                // Create a default portfolio if one doesn't exist
+                _logger.LogInformation("No portfolio found for user {UserId}. Creating a new default portfolio.", userId);
+                portfolio = new Portfolio
+                {
+                    UserId = userId,
+                    Name = "My Main Portfolio",
+                    CreatedDate = DateTime.UtcNow,
+                    LastUpdated = DateTime.UtcNow,
+                    Items = new List<PortfolioItem>()
+                };
+                _portfolioRepository.Add(portfolio);
+                await _portfolioRepository.SaveChangesAsync();
+                _logger.LogInformation("Default portfolio created for user {UserId}.", userId);
+            }
 
-        var portfolioDto = new PortfolioDto
-        {
-            Id = portfolio.Id,
-            UserId = portfolio.UserId,
-            Name = portfolio.Name,
-            CreatedDate = portfolio.CreatedDate,
-            LastUpdated = portfolio.LastUpdated,
-            Items = new List<PortfolioItemDto>()
-        };
+            portfolioDto.Id = portfolio.Id;
+            portfolioDto.UserId = portfolio.UserId;
+            portfolioDto.Name = portfolio.Name;
+            portfolioDto.CreatedDate = portfolio.CreatedDate;
+            portfolioDto.LastUpdated = portfolio.LastUpdated;
+            portfolioDto.Items = new List<PortfolioItemDto>();
 
-        foreach (var item in portfolio.Items)
-        {
-            portfolioDto.Items.Add(new PortfolioItemDto
+            foreach (var item in portfolio.Items)
             {
-                Id = item.Id,
-                StockId = item.StockId,
-                Symbol = item.Stock?.Symbol ?? "N/A",
-                CurrentPrice = item.Stock?.CurrentPrice ?? 0,
-                CompanyName = item.Stock?.CompanyName ?? "Unknown Company",
-                Quantity = item.Quantity,
-                AverageCost = item.AverageCost,
-            });
+                portfolioDto.Items.Add(new PortfolioItemDto
+                {
+                    Id = item.Id,
+                    StockId = item.StockId,
+                    Symbol = item.Stock?.Symbol ?? "N/A",
+                    CurrentPrice = item.Stock?.CurrentPrice ?? 0,
+                    CompanyName = item.Stock?.CompanyName ?? "Unknown Company",
+                    Quantity = item.Quantity,
+                    AverageCost = item.AverageCost,
+                });
+            }
         }
-
+        finally
+        {
+            _portfolioRepository.Dispose(); // Ensure the repository is disposed after use
+        }
         return portfolioDto;
     }
 }

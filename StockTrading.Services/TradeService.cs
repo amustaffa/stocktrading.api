@@ -78,6 +78,10 @@ public class TradeService : ITradeService
             _logger.LogError(ex, "Error placing trade for user {UserId}", userId);
             throw;
         }
+        finally
+        {
+            _uow.Dispose(); // Ensure the unit of work is disposed after use
+        }
     }
 
     public async Task<IEnumerable<TradeDto>> GetUserTradesAsync(string userId)

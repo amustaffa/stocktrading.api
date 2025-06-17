@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace StockTrading.Repository.Interfaces
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
         Task<IDbContextTransaction> BeginTransactionAsync();
         Task<int> SaveChangesAsync();
